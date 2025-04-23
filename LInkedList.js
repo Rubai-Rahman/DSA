@@ -110,6 +110,18 @@ class LinkedList {
     this.length++;
     return true;
   }
+  //remove method
+  remove(index) {
+    if (index < 0 || index >= this.length) return undefined;
+    if (index === 0) return this.shift(index);
+    if (index === this.length) return this.pop(index);
+    const before = this.get(index - 1);
+    const temp = before.next;
+    before.next = temp.next;
+    temp.next = null;
+    this.length--;
+    return temp;
+  }
 }
 
 let myLinkedList = new LinkedList(1);
