@@ -122,6 +122,21 @@ class LinkedList {
     this.length--;
     return temp;
   }
+  //reverse method
+  reverse() {
+    let temp = this.head;
+    this.head = this.tail;
+    this.tail = temp;
+    let next = temp.next;
+    let prev = null;
+    for (leti = 0; i < this.length; i++) {
+      next = temp.next;
+      temp.next = prev;
+      prev = temp;
+      temp = next;
+    }
+    return this;
+  }
 }
 
 let myLinkedList = new LinkedList(1);
