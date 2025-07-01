@@ -39,8 +39,7 @@ class LinkedList {
       this.head = null;
       this.length--;
       return temp;
-    }
-    else {
+    } else {
       let temp = this.head;
       let pre = null;
       while (temp.next) {
@@ -52,6 +51,22 @@ class LinkedList {
       this.length--;
       return temp;
     }
+  }
+
+  //unshift method
+
+  unshift(value) {
+    const newNode = new Node(value);
+
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+    this.length++;
+    return this;
   }
 }
 
