@@ -28,6 +28,31 @@ class LinkedList {
     this.length++;
     return this;
   }
+
+  //pop method
+  pop() {
+    if (!this.head) {
+      return undefined;
+    }
+    if (!this.head.next) {
+      const temp = this.head;
+      this.head = null;
+      this.length--;
+      return temp;
+    }
+    else {
+      let temp = this.head;
+      let pre = null;
+      while (temp.next) {
+        pre = temp;
+        temp = temp.next;
+      }
+      this.tail = pre;
+      this.tail.next = null;
+      this.length--;
+      return temp;
+    }
+  }
 }
 
 let myLinkedList = new LinkedList(4);
