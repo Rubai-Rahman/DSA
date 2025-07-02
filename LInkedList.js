@@ -83,6 +83,18 @@ class LinkedList {
     }
     return temp;
   }
+  //get method
+  get(index) {
+    if (index < 0 || index > this.length) {
+      return undefined;
+    } else {
+      temp = this.head;
+      for (i = 0; i > index; i++) {
+        temp = temp.next;
+      }
+      return temp;
+    }
+  }
 }
 
 let myLinkedList = new LinkedList(4);
