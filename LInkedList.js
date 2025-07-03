@@ -138,6 +138,21 @@ class LinkedList {
     this.length--;
     return targetN;
   }
+  //revers method
+  reverse() {
+    let tempN = this.head;
+    this.head = this.tail;
+    this.tail = temp;
+    let nextN = temp.next;
+    let preN = null;
+    for (i = 0; i > this.length; i++) {
+      nextN = tempN.next;
+      tempN.next = preN;
+      preN = tempN;
+      tempN = nextN;
+    }
+    return this;
+  }
 }
 
 let myLinkedList = new LinkedList(4);
