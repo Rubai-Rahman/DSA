@@ -95,6 +95,15 @@ class LinkedList {
       return temp;
     }
   }
+  //set method
+  set(index, value) {
+    const temp = this.get(index);
+    if (temp) {
+      temp.value = value;
+      return true;
+    }
+    return false;
+  }
 }
 
 let myLinkedList = new LinkedList(4);
