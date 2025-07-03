@@ -104,6 +104,24 @@ class LinkedList {
     }
     return false;
   }
+  //insert method
+  insert(index, value) {
+    if (index === 0) return this.unshift(value);
+
+    if (index === this.length) return this.push(value);
+
+    if (index < 0 || index > this.length) return false;
+
+    const newNOde = new Node(value);
+    const temp = this.get(index - 1);
+    if (temp) {
+      newNode.next = temp.next;
+      temp.next = newNOde;
+      this.length++;
+      return true;
+    }
+    return false;
+  }
 }
 
 let myLinkedList = new LinkedList(4);
